@@ -83,4 +83,4 @@ Si deseas mejorar la simulación o agregar nuevas funcionalidades, puedes hacer 
 
 Este proyecto está bajo la licencia **MIT**, por lo que puedes utilizarlo y modificarlo libremente.
 
-Hecho con ❤️ por Aurelio García Bidart
+Hecho con ❤️ por Florencia Farace y Aurelio García Bidart
