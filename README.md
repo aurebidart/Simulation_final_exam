@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Simulador de Atención en un Cajero Automático
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una simulación de un sistema de atención en un cajero con un único servidor, donde los clientes llegan en intervalos de tiempo exponenciales y reciben un servicio con tiempos también exponenciales. La simulación permite configurar distintos parámetros y visualizar los resultados en forma de estadísticas, tablas y gráficos.
 
-## Available Scripts
+## 📌 Enunciado
 
-In the project directory, you can run:
+Este proyecto parte del enunciado de la materia **Simulación** de la **Universidad Tecnológica Nacional – Facultad Regional Córdoba**:
 
-### `npm start`
+> Un promedio de 10 automóviles por hora llegan a un cajero con un solo servidor que proporciona servicio sin que uno descienda del automóvil. Suponga que el tiempo de servicio promedio por cada cliente es de 4 minutos, y que tanto los tiempos de llegadas como los de servicios son exponenciales.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El objetivo es responder las siguientes preguntas mediante la simulación:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. ¿Cuál es la probabilidad de que el cajero esté ocioso?
+2. ¿Cuál es el número promedio de automóviles que están en la cola del cajero?
+3. ¿Cuál es la cantidad promedio de tiempo que un cliente pasa haciendo cola?
+4. ¿Cuántos clientes atenderá en promedio el cajero por hora?
 
-### `npm test`
+## 📦 Requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este proyecto utiliza **Python** junto con las siguientes librerías:
 
-### `npm run build`
+- `tkinter`: Para la interfaz gráfica.
+- `matplotlib`: Para generar gráficos.
+- `random`, `math`, `copy`: Para manejar la simulación y sus datos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para instalar las dependencias necesarias, ejecuta:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+pip install matplotlib
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Ejecución
 
-### `npm run eject`
+Para correr la simulación, simplemente ejecuta el archivo principal:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+python main.py
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Se abrirá una interfaz gráfica que permitirá configurar los parámetros de la simulación y visualizar los resultados.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠 Funcionalidades
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1️⃣ Configuración de la Simulación
+- Definir la tasa de llegada de autos (media de tiempo entre llegadas o frecuencia por hora).
+- Definir la tasa de servicio del cajero.
+- Especificar la duración de la simulación (en minutos o cantidad de eventos).
 
-## Learn More
+### 2️⃣ Ejecución de la Simulación
+- Se genera un modelo basado en eventos discretos.
+- Se simulan las llegadas y atenciones de los autos.
+- Se registran los datos de cada evento.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3️⃣ Resultados
+- **Estadísticas generales**
+  - Probabilidad de que el cajero esté ocioso.
+  - Número promedio de autos en la cola.
+  - Tiempo promedio de espera en la cola.
+  - Promedio de clientes atendidos por hora.
+- **Visualización de Datos**
+  - Tabla detallada de eventos.
+  - Gráficos de evolución del sistema.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🖥 Interfaz Gráfica
 
-### Code Splitting
+La aplicación tiene dos ventanas principales:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Configuración de la Simulación**: Permite ingresar los parámetros antes de iniciar la simulación.
+2. **Resultados**: Muestra estadísticas clave, permite visualizar datos en tabla y gráficos.
 
-### Analyzing the Bundle Size
+## 📊 Ejemplo de Resultados
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Probabilidad de inactividad: `0.25`
+- Autos promedio en la cola: `1.5`
+- Tiempo promedio de espera: `3.2 minutos`
+- Clientes atendidos por hora: `8.5`
 
-### Making a Progressive Web App
+## 🔗 Contribución
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Si deseas mejorar la simulación o agregar nuevas funcionalidades, puedes hacer un fork del repositorio y enviar un pull request.
 
-### Advanced Configuration
+## 📜 Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Este proyecto está bajo la licencia **MIT**, por lo que puedes utilizarlo y modificarlo libremente.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Hecho con ❤️ por Aurelio García Bidart
